@@ -1,0 +1,8 @@
+@import "_variables.scss";
+.wrap {
+  position: relative;
+}
+main {
+  padding-left: $nav-width;
+  overflow: hidden;
+}

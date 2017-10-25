@@ -1,0 +1,85 @@
+@import "_variables.scss";
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $nav-width;
+  background: rgba(0,0,0, .8);
+  height: 100vh;
+  &__list-wrap {
+    position: absolute;
+    top: calc(50% - 100px);
+    height: 200px;
+  }
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  &__item {
+    margin: 0 0 20px 0;
+    height: $nav-item-height;
+    & a {
+      position: relative;
+    }
+    & a:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: $nav-item-height;
+      line-height: $nav-item-height;
+      text-align: center;
+      transform: scale(0);
+      transition: transform $transition-duration;
+    }
+    & a:before {
+      content: attr(data-name);
+    }
+    &:hover {
+      & a:before {
+        transform: scale(1);
+        //transition: opacity $transition-duration;
+      }
+      & svg {
+        transform: scale(0);
+      }
+
+    }
+    & a.is-active {
+      & svg {
+        fill: $c-white;
+      }
+    }
+    & svg {
+      width: $nav-width;
+      height: 30px;
+      fill: $c-nav-svg;
+      transition: fill $transition-duration,
+                  transform $transition-duration;
+    }
+  }
+  & a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.social {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 20px;
+  &__item {
+    margin: 8px 0;
+    &:hover svg {
+      fill: $c-white;
+    }
+    & svg {
+      width: $nav-width;
+      height: 25px;
+      fill: $c-nav-svg;
+      transition: fill .5s;
+
+    }
+  }
+}
