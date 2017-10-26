@@ -26,6 +26,7 @@ $clr2: rgb(38,149,255);
   font-size: 8vw;
   text-align: center;
   white-space: nowrap;
+  cursor: default;
   & > * {
     position: relative;
     transform: translateZ(0) translate3D(0,0,0);

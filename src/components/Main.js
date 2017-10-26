@@ -5,15 +5,19 @@ import About from './About'
 import Skills from './Skills'
 import Work from './Work'
 
-const Main = () => (
-  <main>
-    <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/about' component={About}/>
-      <Route path='/skills' component={Skills}/>
-      <Route path='/work' component={Work}/>
-    </Switch>
-  </main>
-)
+class Main extends React.Component {
+  render() {
+    return (
+      <main>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/about' component={About}/>
+          <Route path='/skills' component={Skills}/>
+          <Route path='/work' component={Work}/>
+        </Switch>
+      </main>
+    )
+  }
+}
 
 export default Main
